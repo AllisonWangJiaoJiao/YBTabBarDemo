@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class YBTabBar;
+@class YBTabBar,YBConfig;
 
 @protocol YBTabBarDelegate <NSObject>
 
@@ -17,9 +17,16 @@
 
 @end
 
+
+
 @interface YBTabBar : UIView
 
-- (void)addTabBarButtonWithTabBarImageUrl:(NSString *)imageUrl title:(NSString *)title;
+- (instancetype)initWithFrame:(CGRect)frame config:(YBConfig *)config;
+
+//- (void)addTabBarButtonWithTabBarImageUrl:(NSString *)imageUrl title:(NSString *)title;
+- (void)addTabBarButtonNorImageUrl:(NSString *)norImageUrl
+                       selImageUrl:(NSString *)selImageUrl
+                             title:(NSString *)title;
 
 
 @property (nonatomic, weak) id<YBTabBarDelegate> delegate;

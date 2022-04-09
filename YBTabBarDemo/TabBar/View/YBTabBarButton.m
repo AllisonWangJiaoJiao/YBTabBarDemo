@@ -8,9 +8,10 @@
 
 #import "YBTabBarButton.h"
 #import "Masonry.h"
+#import "YBConfig.h"
 
 @interface YBTabBarButton ()
-@property (nonatomic, strong) UILabel *titleLbl;
+
 @end
 
 @implementation YBTabBarButton
@@ -32,13 +33,14 @@
     [self.iconBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         //make.bottom.equalTo(self.mas_centerY).offset(8);
-        make.height.width.mas_equalTo(60);
+        make.top.equalTo(self.mas_top).offset([[YBConfig shareInstance] imageOffset]);
+        make.height.width.mas_equalTo([[YBConfig shareInstance] imageSize]);
     }];
     [self.titleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.iconBtn.mas_bottom).offset(5);
+        make.top.equalTo(self.iconBtn.mas_bottom).offset([[YBConfig shareInstance] titleOffset]);
         make.left.right.equalTo(self);
-        make.height.mas_equalTo(12);
+        make.height.mas_equalTo([[YBConfig shareInstance]titleHeight]);
     }];
 }
 
@@ -47,6 +49,7 @@
         [self.delegate ybTabBarIconButtonClick:self];
     }
 }
+
 
 #pragma mark -- lazy load
 
@@ -63,11 +66,10 @@
 - (UILabel *)titleLbl {
     if (!_titleLbl) {
         _titleLbl = [[UILabel alloc] init];
-        _titleLbl.font = [UIFont systemFontOfSize:12];
+        _titleLbl.font = [UIFont systemFontOfSize:[[YBConfig shareInstance] titleFont]];
         //_titleLbl.textColor = KColorFromRGB(0x916d55);
-        _titleLbl.textColor = [UIColor blackColor];
+        _titleLbl.textColor = [[YBConfig shareInstance] norTitleColor];
         _titleLbl.textAlignment = NSTextAlignmentCenter;
-        //_titleLbl.backgroundColor = [UIColor redColor];
     }
     return _titleLbl;
 }
@@ -78,8 +80,8 @@
 - (void)setTabBarImageUrl:(NSString *)image title:(NSString *)title {
 
     self.titleLbl.text = title;
-    [self.iconBtn setBackgroundImage:[UIImage imageNamed:@"quanzi"] forState:UIControlStateNormal];
-    [self.iconBtn setBackgroundImage:[UIImage imageNamed:@"quanzi_s"] forState:UIControlStateSelected];
+    [self.iconBtn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    //[self.iconBtn setBackgroundImage:[UIImage imageNamed:@"quanzi_s"] forState:UIControlStateSelected];
 
 }
 

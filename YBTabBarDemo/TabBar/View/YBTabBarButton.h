@@ -18,7 +18,12 @@
 
 @interface YBTabBarButton : UIControl
 @property (nonatomic, weak) id<YBTabBarButtonDelegate> delegate;
+
+/// 背景图片按钮
 @property (nonatomic, strong) UIButton *iconBtn;
+/// 文字
+@property (nonatomic, strong) UILabel *titleLbl;
+
 
 /// 设置自定义tabbar的图片和文字
 /// @param image 图片URL路径

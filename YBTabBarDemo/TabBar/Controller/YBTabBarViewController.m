@@ -6,9 +6,10 @@
 //
 
 #import "YBTabBarViewController.h"
-#import "YBTabBar.h"
+#import "YBConfig.h"
 
 @interface YBTabBarViewController () <YBTabBarDelegate>
+
 /**
  *  自定义的tabbar
  */
@@ -59,10 +60,22 @@
     //[self.tabBar addSubview:customTabBar];
     //self.customTabBar = customTabBar;
 
+    //配置信息
+    YBConfig *config = [YBConfig shareInstance];
+//    config.titleFont = 12;
+//    config.norTitleColor = [UIColor blackColor];
+//    config.selTitleColor = [UIColor cyanColor];
+//    config.titleOffset = 5;
+//    config.imageOffset = 10;
+//    config.imageSize = CGSizeMake(50, 50);
+//    config.titleHeight = 12;
+//    config.bgImageOffset = 20;
+    
     CGSize viewSize = self.view.bounds.size;
     CGFloat tabBarStartingY = viewSize.height;
     CGFloat tabBarHeight = 100;
-    YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight)];
+    //YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight)];
+    YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight) config:config];
     customTabBar.backgroundColor = [UIColor clearColor];
     customTabBar.delegate = self;
     [self.view addSubview:customTabBar];
@@ -135,7 +148,10 @@
     // 3.添加tabbar内部的按钮
 
 //    [self.customTabBar addTabBarButtonWithItem:childVc.tabBarItem];
-    [self.customTabBar addTabBarButtonWithTabBarImageUrl:selectedImageName title:childVc.title];
+//    [self.customTabBar addTabBarButtonWithTabBarImageUrl:selectedImageName title:childVc.title];
+    [self.customTabBar addTabBarButtonNorImageUrl:imageName
+                                      selImageUrl:selectedImageName
+                                            title:title];
 
 }
 

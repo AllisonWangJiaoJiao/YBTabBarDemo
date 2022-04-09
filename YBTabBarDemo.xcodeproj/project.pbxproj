@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1BB4FF0E588AB2F57DC62BD5 /* Pods_YBTabBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF22894F6D656EA8911644F /* Pods_YBTabBarDemo.framework */; };
+		377EA37D28017F9B002C11F4 /* YBConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 377EA37C28017F9B002C11F4 /* YBConfig.m */; };
+		377EA38B28019388002C11F4 /* UIColor+YB.m in Sources */ = {isa = PBXBuildFile; fileRef = 377EA38A28019388002C11F4 /* UIColor+YB.m */; };
 		379786B228004C1C00B5A2C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379786B128004C1C00B5A2C6 /* AppDelegate.m */; };
 		379786B828004C1C00B5A2C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379786B728004C1C00B5A2C6 /* ViewController.m */; };
 		379786BB28004C1C00B5A2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379786B928004C1C00B5A2C6 /* Main.storyboard */; };
@@ -21,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		1A4B18B5F50549CFF27647A1 /* Pods-YBTabBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBTabBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-YBTabBarDemo/Pods-YBTabBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		377EA37B28017F9B002C11F4 /* YBConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBConfig.h; sourceTree = "<group>"; };
+		377EA37C28017F9B002C11F4 /* YBConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBConfig.m; sourceTree = "<group>"; };
+		377EA38928019388002C11F4 /* UIColor+YB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YB.h"; sourceTree = "<group>"; };
+		377EA38A28019388002C11F4 /* UIColor+YB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YB.m"; sourceTree = "<group>"; };
 		379786AD28004C1C00B5A2C6 /* YBTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379786B028004C1C00B5A2C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		379786B128004C1C00B5A2C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		377EA38828019388002C11F4 /* YBUtility */ = {
+			isa = PBXGroup;
+			children = (
+				377EA38928019388002C11F4 /* UIColor+YB.h */,
+				377EA38A28019388002C11F4 /* UIColor+YB.m */,
+			);
+			path = YBUtility;
+			sourceTree = "<group>";
+		};
 		379786A428004C1C00B5A2C6 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +106,7 @@
 		379786C928004CB200B5A2C6 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				377EA38828019388002C11F4 /* YBUtility */,
 				379786CE28004DE000B5A2C6 /* Controller */,
 				379786CD28004DE000B5A2C6 /* View */,
 			);
@@ -104,6 +120,8 @@
 				379786D328004E5B00B5A2C6 /* YBTabBar.m */,
 				379786D628004E9400B5A2C6 /* YBTabBarButton.h */,
 				379786D528004E9400B5A2C6 /* YBTabBarButton.m */,
+				377EA37B28017F9B002C11F4 /* YBConfig.h */,
+				377EA37C28017F9B002C11F4 /* YBConfig.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,7 +141,6 @@
 				1A4B18B5F50549CFF27647A1 /* Pods-YBTabBarDemo.debug.xcconfig */,
 				6EBECCFF12B762FB8147E956 /* Pods-YBTabBarDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -250,10 +267,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				379786D728004E9400B5A2C6 /* YBTabBarButton.m in Sources */,
+				377EA37D28017F9B002C11F4 /* YBConfig.m in Sources */,
 				379786D428004E5B00B5A2C6 /* YBTabBar.m in Sources */,
 				379786B828004C1C00B5A2C6 /* ViewController.m in Sources */,
 				379786D128004DE000B5A2C6 /* YBTabBarViewController.m in Sources */,
 				379786B228004C1C00B5A2C6 /* AppDelegate.m in Sources */,
+				377EA38B28019388002C11F4 /* UIColor+YB.m in Sources */,
 				379786C328004C1D00B5A2C6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
