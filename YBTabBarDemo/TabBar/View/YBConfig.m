@@ -36,10 +36,10 @@ static id _instance = nil;
 - (void)configNormal {
     _norTitleColor = [UIColor colorWithHexString:@"#808080"];
     _selTitleColor = [UIColor colorWithHexString:@"#d81e06"];
-    _imageSize = CGSizeMake(50, 50);
+    _imageSize = CGSizeMake(40, 40);
     _titleFont = 12.f;
     _titleOffset = 5.f;
-    _imageOffset = 10.f;
+    _imageOffset = 5.f;
     _titleHeight = 12.f;
     _bgImageOffset = 20.f;
 }

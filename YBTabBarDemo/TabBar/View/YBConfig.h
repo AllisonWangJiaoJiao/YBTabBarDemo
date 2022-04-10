@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat titleFont;
 /** 标题的偏移值 (标题距离底部的距离 默认 5.f) */
 @property (nonatomic, assign) CGFloat titleOffset;
-/** 图片的偏移值 (图片距离顶部的距离 默认 10.f) */
+/** 图片的偏移值 (图片距离顶部的距离 默认 5.f) */
 @property (nonatomic, assign) CGFloat imageOffset;
 /** 背景图片的偏移值 (图片距离顶部的距离 默认 20.f) */
 @property (nonatomic, assign) CGFloat bgImageOffset;

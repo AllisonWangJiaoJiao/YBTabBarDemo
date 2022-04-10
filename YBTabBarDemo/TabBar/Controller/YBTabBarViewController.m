@@ -71,15 +71,25 @@
 //    config.titleHeight = 12;
 //    config.bgImageOffset = 20;
     
-    CGSize viewSize = self.view.bounds.size;
-    CGFloat tabBarStartingY = viewSize.height;
-    CGFloat tabBarHeight = 100;
-    //YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight)];
-    YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight) config:config];
-    customTabBar.backgroundColor = [UIColor clearColor];
+    YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame:self.tabBar.bounds config:config];
+    customTabBar.backgroundColor = [UIColor yellowColor];
+    CGRect mainFrame = customTabBar.frame;
+    mainFrame.size.height = 88;
+    customTabBar.frame = mainFrame;
     customTabBar.delegate = self;
-    [self.view addSubview:customTabBar];
+    [self.tabBar addSubview:customTabBar];
+    [customTabBar bringSubviewToFront:self.tabBar];
     self.customTabBar = customTabBar;
+    
+//    CGSize viewSize = self.view.bounds.size;
+//    CGFloat tabBarStartingY = viewSize.height;
+//    CGFloat tabBarHeight = 100;
+//    //YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight)];
+//    YBTabBar *customTabBar = [[YBTabBar alloc] initWithFrame: CGRectMake(0, tabBarStartingY - tabBarHeight, viewSize.width, tabBarHeight) config:config];
+//    customTabBar.backgroundColor = [UIColor clearColor];
+//    customTabBar.delegate = self;
+//    [self.view addSubview:customTabBar];
+//    self.customTabBar = customTabBar;
 }
 
 

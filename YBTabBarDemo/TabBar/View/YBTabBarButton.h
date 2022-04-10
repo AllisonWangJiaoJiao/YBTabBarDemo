@@ -26,8 +26,8 @@
 
 
 /// 设置自定义tabbar的图片和文字
-/// @param image 图片URL路径
+/// @param imageUrl 图片URL路径
 /// @param title 标题文字
-- (void)setTabBarImageUrl:(NSString *)image title:(NSString *)title;
+- (void)setTabBarImageUrl:(NSString *)imageUrl title:(NSString *)title;
 
 @end
